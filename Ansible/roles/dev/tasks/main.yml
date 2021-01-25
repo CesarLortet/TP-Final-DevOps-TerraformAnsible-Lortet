@@ -1,0 +1,9 @@
+---
+# tasks file for roles/dev
+- name: Update apt and install docker-compose
+  apt: update_cache=yes name=docker-compose state=latest
+
+- name: Clone git repo
+  git:
+    repo: "https://github.com/j0h3/cours_ynov.git"
+    dest: /home/ubuntu/Jenkins
